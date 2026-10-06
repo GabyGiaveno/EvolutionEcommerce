@@ -1,0 +1,170 @@
+﻿{
+   "CodeGenerationMode": 4,
+   "ContextClassName": "EvolutionDBContext",
+   "ContextNamespace": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": false,
+   "MinimumProductVersion": "2.6.1130",
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": "Models",
+   "PreserveCasingWithRegex": true,
+   "ProjectRootNamespace": "Entities",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 2,
+   "SelectedToBeGenerated": 0,
+   "T4TemplatePath": null,
+   "Tables": [
+      {
+         "Name": "[dbo].[Calles]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[DatosPagosGuardados]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Desarrolladoras]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Descuentos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[DescuentosProducto]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[DetallesTransacciones]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Direcciones]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Dlcs]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Etiquetas]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[FormasPago]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Generos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Juegos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[JuegosDesarrolladoras]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[JuegosEtiquetas]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[JuegosGeneros]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[JuegosPublishers]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Logros]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Paises]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Pegis]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[PreciosProductos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Productos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Provincias]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Publishers]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Regiones]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[SistemasOperativos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[SistemasOperativosJuegos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Transacciones]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Usuarios]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[UsuariosJuegos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[UsuariosLogros]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[UsuariosWishlist]",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": null,
+   "UncountableWords": null,
+   "UseAsyncStoredProcedureCalls": true,
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": false,
+   "UseDatabaseNamesForRoutines": true,
+   "UseDateOnlyTimeOnly": true,
+   "UseDbContextSplitting": false,
+   "UseDecimalDataAnnotationForSprocResult": true,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": true,
+   "UseInternalAccessModifiersForSprocsAndFunctions": false,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UsePrefixNavigationNaming": false,
+   "UseSchemaFolders": false,
+   "UseSchemaNamespaces": false,
+   "UseSpatial": false,
+   "UseT4": false,
+   "UseT4Split": false
+}

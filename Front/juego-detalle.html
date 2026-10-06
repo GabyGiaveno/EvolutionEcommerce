@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalles del Juego</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </head>
+<body class="bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 text-gray-100 min-h-screen">
+    <header class="sticky top-0 z-50 bg-gray-900/70 backdrop-blur-sm py-4 px-8 border-b-2 border-gray-700 shadow-lg mb-12">
+            <div class="container mx-auto max-w-screen-xl flex justify-between items-center gap-8">
+                <h1 class="text-3xl font-bold text-blue-400 flex-none">
+                    <a href="index.html">Evolution Store</a>
+                </h1>
+                <nav class="space-x-4 flex-none">
+                    <a href="index.html" class="text-lg text-gray-300 hover:text-blue-400 transition-colors">Tienda</a>
+                    <a href="usuario.html" class="text-lg text-gray-300 hover:text-blue-400 transition-colors">Perfil</a>
+                    <a href="carrito.html" class="text-lg text-gray-300 hover:text-blue-400 transition-colors" title="Carrito" aria-label="Carrito">🛒</a>
+                </nav>
+            </div>
+        </header>
+    <div class="container mx-auto max-w-5xl">
+        <div id="juego-detalle-container">
+            <p id="juego-loading-text" class="text-center text-2xl text-gray-300 mt-20">
+                Cargando detalles del juego...
+            </p>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

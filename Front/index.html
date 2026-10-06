@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolution Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-900 to-indigo-950 text-gray-100 font-sans">
+
+    <header class="sticky top-0 z-50 bg-gray-900/70 backdrop-blur-sm py-4 px-8 border-b-2 border-gray-700 shadow-lg">
+        <div class="container mx-auto max-w-screen-xl flex justify-between items-center gap-8">
+            <h1 class="text-3xl font-bold text-blue-400 flex-none">
+                <a href="index.html">Evolution Store</a>
+            </h1>
+
+            <div class="flex-1 w-full max-w-lg">
+                <input 
+                    type="search" 
+                    id="search-bar" 
+                    placeholder="Buscar por nombre..."
+                    class="w-full p-3 bg-gray-700 border border-gray-600 rounded-full text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+                >
+            </div>
+
+            <nav class="space-x-4 flex-none">
+                <a href="index.html" class="text-lg text-blue-400 font-bold border-b-2 border-blue-400 pb-1">Tienda</a>
+                <a href="usuario.html" class="text-lg text-gray-300 hover:text-blue-400 transition-colors">Perfil</a>
+                <a href="SigIn.html" class="text-lg text-gray-300 hover:text-blue-400 transition-colors">Login</a>
+                <a href="admin.html" class="text-lg text-gray-300 hover:text-blue-400 transition-colors">Panel de Admin</a>
+                <a href="carrito.html" class="text-lg text-gray-300 hover:text-blue-400 transition-colors" title="Carrito" aria-label="Carrito">🛒</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container mx-auto max-w-screen-xl lg:flex gap-8 p-4 md:p-8">
+        <aside class="flex-none lg:w-64 p-6 bg-gray-800 rounded-xl shadow-2xl h-fit mb-6 lg:mb-0">
+            <h2 class="text-2xl font-semibold border-b-2 border-blue-500 pb-2 mb-4">Filtros</h2>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold mb-2 text-blue-400">Géneros</h3>
+                <div id="filter-container-generos" class="max-h-52 overflow-y-auto p-2 border border-gray-600 rounded-md space-y-2">
+                    <label class="block cursor-pointer hover:text-white">
+                        <input type="checkbox" class="mr-2 accent-blue-500"> Cargando...
+                    </label>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold mb-2 text-blue-400">Publishers</h3>
+                <div id="filter-container-publishers" class="max-h-52 overflow-y-auto p-2 border border-gray-600 rounded-md space-y-2">
+                    <label class="block cursor-pointer hover:text-white">
+                        <input type="checkbox" class="mr-2 accent-blue-500"> Cargando...
+                    </label>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-semibold mb-2 text-blue-400">Etiquetas</h3>
+                <div id="filter-container-etiquetas" class="max-h-52 overflow-y-auto p-2 border border-gray-600 rounded-md space-y-2">
+                    <label class="block cursor-pointer hover:text-white">
+                        <input type="checkbox" class="mr-2 accent-blue-500"> Cargando...
+                    </label>
+                </div>
+            </div>
+        </aside>
+        <main class="flex-1">
+            <section id="juegos" class="mb-12">
+                <h2 class="text-3xl font-bold mb-6 text-white">Juegos Destacados</h2>
+                
+                <div id="product-list-juegos" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                </div>
+            </section>
+            <section id="paginacion" class="flex justify-center items-center mt-12 space-x-1">
+                <a href="#" class="px-4 py-2 bg-gray-700 text-gray-500 rounded-lg cursor-not-allowed">&laquo; Anterior</a>
+                <a href="#" class="px-4 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700">1</a>
+                <a href="#" class="px-4 py-2 bg-gray-700 text-gray-300 rounded-lg hover:bg-gray-600">2</a>
+                <a href="#" class="px-4 py-2 bg-gray-700 text-gray-300 rounded-lg hover:bg-gray-600">Siguiente &raquo;</a>
+            </section>
+
+        </main>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+
+</body>
+</html>
+

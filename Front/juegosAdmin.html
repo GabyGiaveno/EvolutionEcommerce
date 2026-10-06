@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador de Juego</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#10b981',
+                    }
+                }
+            }
+        }
+    </script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body class="bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 text-gray-100 min-h-screen p-8"
+    data-page="admin">
+    <div class="container mx-auto max-w-6xl">
+
+        <header class="mb-8">
+            <h1 class="text-4xl font-bold text-white mb-2">Panel de Juegos</h1>
+            <p class="text-xl text-gray-300">Crea/Actualiza/Elimina</p>
+                    <div class="space-x-4 mt-4"> 
+            <a href="admin.html" class="text-lg text-blue-400 font-bold border-b-2 border-blue-400 pb-1">
+                Panel De Admin
+            </a>     
+            <a href="index.html" class="text-lg text-blue-400 font-bold border-b-2 border-blue-400 pb-1">
+                Tienda
+            </a>
+            <a href=""></a>
+        </div>
+            <div class="space-x-4 mt-4"> 
+                <button id="btn-nuevo-juego" class="text-lg text-white font-bold py-2 px-4 rounded-lg bg-blue-600 hover:bg-blue-700 transition">
+                    Agregar nuevo Juego
+                </button>
+            </div>
+        </header>
+        
+        <main class="flex-1">
+            <section id="juegos" class="mb-12">
+                <h2 class="text-3xl font-bold mb-6 text-white">Juegos Cargados</h2>
+                <div id="product-list-juegos" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                </div>
+            </section>
+            <section id="paginacion" class="flex justify-center items-center mt-12 space-x-1">
+            </section>
+        </main>
+    </div>
+
+    <div id="juego-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 backdrop-blur-sm hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div id="modal-content" class="bg-gray-800 rounded-xl shadow-2xl w-full max-w-3xl max-h-[90vh] transition-all transform opacity-0 scale-95">
+            <div class="flex justify-between items-center p-5 border-b border-gray-700">
+                <h3 id="modal-title" class="text-2xl font-bold text-white">Crear/Editar Juego</h3>
+                <button id="modal-close-btn" class="text-gray-400 hover:text-white">&times;</button>
+            </div>
+            
+            <form id="juego-form" class="overflow-y-auto max-h-[calc(90vh-140px)] p-6 space-y-6">
+                <input type="hidden" id="juego-id">
+                <input type="hidden" id="juego-estado-actual">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="nombre" class="block text-sm font-medium text-blue-300 mb-1">Nombre</label>
+                        <input type="text" id="nombre" class="w-full bg-gray-700 text-white rounded-md p-2 border border-gray-600 focus:ring-blue-500 focus:border-blue-500" required>
+                    </div>
+                    <div>
+                        <label for="precioInicial" class="block text-sm font-medium text-blue-300 mb-1">Precio Actual</label>
+                        <input type="number" id="precioInicial" step="0.01" class="w-full bg-gray-700 text-white rounded-md p-2 border border-gray-600 focus:ring-blue-500 focus:border-blue-500" required>
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="descripcion" class="block text-sm font-medium text-blue-300 mb-1">Descripción</label>
+                    <textarea id="descripcion" rows="3" class="w-full bg-gray-700 text-white rounded-md p-2 border border-gray-600 focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="fechaLanzamiento" class="block text-sm font-medium text-blue-300 mb-1">Fecha de Lanzamiento</label>
+                        <input type="date" id="fechaLanzamiento" class="w-full bg-gray-700 text-white rounded-md p-2 border border-gray-600 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="pegi" class="block text-sm font-medium text-blue-300 mb-1">Clasificación PEGI</label>
+                        <select id="pegi" class="w-full bg-gray-700 text-white rounded-md p-2 border border-gray-600 focus:ring-blue-500 focus:border-blue-500" required>
+                            <option value="">Cargando...</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div id="generos-container" class="p-3 bg-gray-700 rounded-md border border-gray-600">
+                        <h4 class="text-lg font-semibold mb-2 text-blue-300">Géneros</h4>
+                        <div id="generos-list" class="max-h-32 overflow-y-auto space-y-1">Cargando...</div>
+                    </div>
+                    <div id="publishers-container" class="p-3 bg-gray-700 rounded-md border border-gray-600">
+                        <h4 class="text-lg font-semibold mb-2 text-blue-300">Publishers</h4>
+                        <div id="publishers-list" class="max-h-32 overflow-y-auto space-y-1">Cargando...</div>
+                    </div>
+                    <div id="etiquetas-container" class="p-3 bg-gray-700 rounded-md border border-gray-600">
+                        <h4 class="text-lg font-semibold mb-2 text-blue-300">Etiquetas</h4>
+                        <div id="etiquetas-list" class="max-h-32 overflow-y-auto space-y-1">Cargando...</div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-2 text-blue-300">DLCs</h4>
+                    <div id="dlc-list" class="space-y-3 mb-3">
+                    </div>
+                    <button type="button" id="btn-add-dlc" class="text-sm bg-gray-600 hover:bg-gray-500 text-white py-1 px-3 rounded-md transition">
+                        + Agregar DLC
+                    </button>
+                </div>
+
+            </form>
+            
+            <div class="flex justify-between items-center p-5 border-t border-gray-700 bg-gray-800 rounded-b-xl">
+                <div>
+                    <button type="button" id="btn-toggle-estado" class="text-white py-2 px-4 rounded-md transition hidden">
+                    </button>
+                </div>
+                <div class="space-x-3">
+                    <button type="button" id="modal-btn-cancelar" class="text-gray-300 bg-gray-600 hover:bg-gray-700 py-2 px-4 rounded-md transition">Cancelar</button>
+                    <button type="submit" form="juego-form" class="text-white bg-blue-600 hover:bg-blue-700 font-bold py-2 px-4 rounded-md transition">Guardar Cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/juegoAdmin.js"></script>
+
+</body>
+</html>

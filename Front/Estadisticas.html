@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-R" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página de Reportes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+<body class="bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 text-gray-100 min-h-screen p-8">
+
+    <div class="container mx-auto max-w-6xl">
+        
+        <header class="mb-8 flex justify-between items-center">
+            <div>
+                <h1 class="text-4xl font-bold text-white mb-2">Reportes de Estadísticas</h1>
+                <p class="text-xl text-gray-300">Análisis de Ventas y Usuarios</p>
+            </div>
+            <a href="./admin.html"
+                class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300">
+                &larr; Volver al Panel
+            </a>
+        </header>
+
+        <div class="bg-gray-800 rounded-xl shadow-2xl p-6 mb-8"> <h2 class="text-2xl font-bold text-white mb-4">Ingresos Comparativos (Juego Base vs. DLCs)</h2>
+            <div id="chart-container" class="bg-gray-700 p-4 rounded-lg min-h-[400px]">
+                <canvas id="grafico-dlc-reporte"></canvas>
+            </div>
+            <p id="grafico-error" class="text-red-400 text-center mt-2"></p>
+            <p id="grafico-loading" class="text-gray-300 text-center mt-4">Cargando datos del reporte...</p>
+        </div>
+        
+        <div class="bg-gray-800 rounded-xl shadow-2xl p-6">
+            <h2 class="text-2xl font-bold text-white mb-4">Top 10 - Usuarios por Gasto</h2>
+            
+            <div id="chart-container-usuarios" class="bg-gray-700 p-4 rounded-lg min-h-[400px]">
+                <canvas id="grafico-top-usuarios"></canvas>
+            </div>
+            <p id="grafico-usuarios-error" class="text-red-400 text-center mt-2"></p>
+            <p id="grafico-usuarios-loading" class="text-gray-300 text-center mt-4">Cargando datos de usuarios...</p>
+        </div>
+
+        <p id="grafico-loading" class="text-gray-300 text-center mt-4">Cargando datos del reporte...</p>
+        <div class="bg-gray-800 rounded-xl shadow-2xl p-6 mt-8"> <h2 class="text-2xl font-bold text-white mb-4">Top 5 - Publishers (Ventas y Recaudación)</h2>
+            <div id="chart-container-publishers" class="bg-gray-700 p-4 rounded-lg min-h-[400px]">
+                <canvas id="grafico-top-publishers"></canvas>
+            </div>
+            <p id="grafico-publishers-error" class="text-red-400 text-center mt-2"></p>
+            <p id="grafico-publishers-loading" class="text-gray-300 text-center mt-4">Cargando datos de publishers...</p>
+        </div>
+        </div> <script type="module" src="js/main.js"></script>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

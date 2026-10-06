@@ -1,0 +1,91 @@
+## Visual Studio / .NET / C# Web API ##
+
+# Compilación
+bin/
+obj/
+[Bb]uild/
+[Ll]og/
+out/
+Debug/
+Release/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+
+# Archivos de usuario y configuración local
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+*.userprefs
+.vscode/
+.idea/
+.vs/
+
+# Archivos temporales
+*.tmp
+*.temp
+*.bak
+*.old
+*.cache
+*.log
+*.pid
+*.svclog
+*.pdb
+
+# Dependencias de paquetes
+packages/
+*.nupkg
+*.snupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Configuraciones secretas o sensibles
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+.env
+.env.*
+
+# Archivos generados por publicación
+wwwroot/dist/
+wwwroot/build/
+publish/
+node_modules/
+dist/
+
+# Archivos de test o cobertura
+TestResults/
+coverage/
+*.coverage
+*.coveragexml
+*.codecoverage
+
+# Archivos de herramientas
+ReSharper*/
+*_Resharper.*
+*.DotSettings.user
+.nuget/
+.ncrunch*
+*.ncrunchsolution
+*.nunit.xml
+*.vspscc
+*.vssscc
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos de Docker
+*.dockerfile
+docker-compose.override.yml
+
+# Archivos de seguridad (certificados locales)
+*.pfx
+*.p12
+
+# Archivos de publicación temporal
+*.Publish.xml

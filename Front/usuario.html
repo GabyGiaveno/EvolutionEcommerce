@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario - Evolution Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-900 to-indigo-950 text-gray-100 font-sans">
+
+    <header class="sticky top-0 z-50 bg-gray-900/70 backdrop-blur-sm py-4 px-8 border-b-2 border-gray-700 shadow-lg">
+        <div class="container mx-auto max-w-screen-xl flex justify-between items-center gap-8">
+            <h1 class="text-3xl font-bold text-blue-400 flex-none">
+                <a href="index.html">Evolution Store</a>
+            </h1>
+
+            <div class="flex-1 w-full max-w-lg">
+                <input 
+                    type="search" 
+                    id="search-bar" 
+                    placeholder="Buscar por nombre..."
+                    class="w-full p-3 bg-gray-700 border border-gray-600 rounded-full text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+                >
+            </div>
+
+            <nav class="space-x-4 flex-none">
+                <a href="index.html" class="text-lg text-gray-300 hover:text-blue-400 transition-colors">Tienda</a>
+                <a href="usuario.html" class="text-lg text-blue-400 font-bold border-b-2 border-blue-400 pb-1">Perfil</a>
+                <a href="SigIn.html" class="text-lg text-gray-300 hover:text-blue-400 transition-colors">Login</a>
+                                <a href="carrito.html" class="text-lg text-gray-300 hover:text-blue-400 transition-colors" title="Carrito" aria-label="Carrito">🛒</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto max-w-screen-xl p-4 md:p-8">
+        <section class="bg-gray-800 rounded-xl shadow-2xl p-6 md:p-8 mb-8 flex flex-col md:flex-row items-center gap-6">
+            <div>
+                <img class="w-32 h-32 rounded-full border-4 border-blue-500 shadow-lg" src="https://via.placeholder.com/150/8b5cf6/FFFFFF?text=USER" alt="Avatar de usuario">
+            </div>
+            <div class="text-center md:text-left">
+                <h2 class="text-4xl font-bold text-white">NombreUsuario</h2>
+                <p class="text-lg text-blue-300">usuario@email.com</p>
+                <p class="text-gray-400 mt-2">Miembro desde: 01 Enero 2025</p>
+                <div class="flex justify-center md:justify-start gap-6 mt-4">
+                    <div>
+                        <span class="block text-2xl font-bold text-white">12</span>
+                        <span class="text-sm text-gray-400">Juegos</span>
+                    </div>
+                    <div>
+                        <span class="block text-2xl font-bold text-white">5</span>
+                        <span class="text-sm text-gray-400">En Wishlist</span>
+                    </div>
+                    <div>
+                        <span class="block text-2xl font-bold text-white">84</span>
+                        <span class="text-sm text-gray-400">Logros</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="mb-6">
+            <div class="border-b border-gray-700">
+                <nav class="flex space-x-4">
+                    <button id="tab-biblioteca" type="button" class="tab-button text-white border-b-2 border-white py-3 px-4 font-semibold text-lg">Mi Biblioteca</button>
+                    <button id="tab-wishlist" type="button" class="tab-button text-blue-400 hover:text-blue-300 py-3 px-4 font-semibold text-lg">Mi Wishlist</button>
+                </nav>
+            </div>
+        </div>
+        <section id="content-biblioteca" class="tab-content">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <div class="bg-gray-800 rounded-xl overflow-hidden shadow-2xl">
+                    <img class="w-full h-64 object-cover" src="https://via.placeholder.com/400x300.png?text=Cyberpunk+2077" alt="Imagen del juego">
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold truncate text-white" title="Cyberpunk 2077">Cyberpunk 2077</h3>
+                        <p class="text-sm text-gray-400 h-5 my-1">Tiempo total: 120hs</p>
+                        <div class="pt-2 mt-2 border-t border-gray-600 text-center">
+                            <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition-all">Jugar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="content-wishlist" class="tab-content hidden">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <div class="bg-gray-800 rounded-xl overflow-hidden shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-blue-500/30 hover:shadow-xl">
+                    <img class="w-full h-64 object-cover" src="https://via.placeholder.com/400x300.png?text=Juego+Deseado+1" alt="Imagen del juego">
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold truncate text-white" title="Juego Deseado 1">Juego Deseado 1</h3>
+                        <div class="text-sm text-gray-400 h-5 my-1">Aventura, RPG</div>
+                        <div class="flex justify-between items-center pt-2 mt-2 border-t border-gray-600">
+                            <span class="text-sm font-bold text-gray-400">PEGI 18</span>
+                            <span class="text-xl font-bold text-blue-400">$49.99</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+<script type="module" src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabBiblioteca = document.getElementById('tab-biblioteca');
+            const tabWishlist = document.getElementById('tab-wishlist');
+            const contentBiblioteca = document.getElementById('content-biblioteca');
+            const contentWishlist = document.getElementById('content-wishlist');
+            const activeClasses = ['text-white', 'border-b-2', 'border-white'];
+            const inactiveClasses = ['text-blue-400', 'hover:text-blue-300'];
+            function switchTab(activeTab, inactiveTab, activeContent, inactiveContent) {
+                activeTab.classList.add(...activeClasses);
+                activeTab.classList.remove(...inactiveClasses);
+                inactiveTab.classList.add(...inactiveClasses);
+                inactiveTab.classList.remove(...activeClasses);
+                activeContent.classList.remove('hidden');
+                inactiveContent.classList.add('hidden');
+            }
+
+            tabBiblioteca.addEventListener('click', () => switchTab(tabBiblioteca, tabWishlist, contentBiblioteca, contentWishlist));
+            tabWishlist.addEventListener('click', () => switchTab(tabWishlist, tabBiblioteca, contentWishlist, contentBiblioteca));
+        });
+    </script>
+
+</body>
+</html>
+
